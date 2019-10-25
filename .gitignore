@@ -1,0 +1,7 @@
+// This file will block what data don't need to upload to github.
+
+// plugins resource
+node_modules
+
+// Mac book's meta data file.
+.DS_Store 
