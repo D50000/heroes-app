@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import Heroes from './components/heroes';
+import Heroes from './components/Heroes';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Heroes />, document.getElementById('root'));
