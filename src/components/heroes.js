@@ -15,7 +15,7 @@ export default class Heroes extends React.Component {
 				return response.json();
 			})
 			.then(heroes => {
-				console.log(typeof(heroes));
+				// console.log(typeof(heroes));
 				this.setState({ heroes: heroes });
 				console.log(heroes);
 			});
@@ -23,17 +23,19 @@ export default class Heroes extends React.Component {
 
     render(){
        return(
-		   <table>
-				<tr className="container">
-					{this.state.heroes.map( hero => 
-						<SingleHero
-							key={hero.id}
-							image={hero.image}
-							name={hero.name}
-						/>
-					)}
-				</tr>
-		   </table>
+			<table>
+				<thead>
+						<tr className="container">
+							{this.state.heroes.map( hero => 
+								<SingleHero
+									key={hero.id}
+									image={hero.image}
+									name={hero.name}
+								/>
+							)}
+						</tr>
+				</thead>
+		   	</table>
         )
      }
 }
