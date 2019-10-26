@@ -16,16 +16,13 @@ code {
 
 
 /* Heroes.js start */
-table {
-	width: 80%;
-	margin-top: 5px;
-	margin: 0 auto;
-}
-
 .container {
+	width: 80%;
+	margin: 5px auto;
 	display: grid;
 	grid-gap: 10px;
 	text-align: center;
+	justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
 }
 /* Heroes.js end */
@@ -36,3 +33,27 @@ table {
     border-radius: 5px;
 }
 /* SingleHero.js end */
+
+/* HeroProfile.js start */
+section {
+	display: flex;
+    width: 80%;
+	margin: 0 auto;
+	border: 2px solid #79787d;
+    border-radius: 5px;
+}
+
+section .leftBox {
+	width: 60%;
+	text-align: center;
+}
+
+section .rightBox {
+	width: 40%;
+	text-align: center;
+}
+
+.selected {
+	background-color: blue;
+}
+/* HeroProfile.js end */

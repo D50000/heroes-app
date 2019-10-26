@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 // import components
 import SingleHero from "./SingleHero";
@@ -23,19 +24,18 @@ export default class Heroes extends React.Component {
 
     render(){
        return(
-			<table>
-				<thead>
-					<tr className="container">
-						{this.state.heroes.map( hero => 
-							<SingleHero
-								key={hero.id}
-								image={hero.image}
-								name={hero.name}
-							/>
-						)}
-					</tr>
-				</thead>
-		   	</table>
+			<div className="container">
+				{this.state.heroes.map( hero => 
+				<NavLink to={{pathname: `/heroes/${hero.id}`}} activeClassName="selected" key={hero.id}>
+					<SingleHero
+						key={hero.id}
+						id={hero.id}
+						image={hero.image}
+						name={hero.name}
+					/>
+				</NavLink>
+				)}
+			</div>
         )
      }
 }
