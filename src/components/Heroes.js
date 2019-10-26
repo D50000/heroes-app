@@ -40,12 +40,16 @@ export default class Heroes extends React.Component {
 		}
 	}
 
+	test = () => {
+		console.log("test");
+	}
+	
     render(){
        return(
 			<div className="container">
 				{this.state.heroes.map( hero => 
 				<NavLink to={{pathname: `/heroes/${hero.id}`, state: { index: hero.id }}} 
-					activeClassName="selected" key={hero.id}>
+					activeClassName="selected" onClick={this.test} key={hero.id}>
 					<SingleHero
 						key={hero.id}
 						id={hero.id}
