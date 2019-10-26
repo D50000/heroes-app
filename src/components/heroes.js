@@ -25,15 +25,15 @@ export default class Heroes extends React.Component {
        return(
 			<table>
 				<thead>
-						<tr className="container">
-							{this.state.heroes.map( hero => 
-								<SingleHero
-									key={hero.id}
-									image={hero.image}
-									name={hero.name}
-								/>
-							)}
-						</tr>
+					<tr className="container">
+						{this.state.heroes.map( hero => 
+							<SingleHero
+								key={hero.id}
+								image={hero.image}
+								name={hero.name}
+							/>
+						)}
+					</tr>
 				</thead>
 		   	</table>
         )

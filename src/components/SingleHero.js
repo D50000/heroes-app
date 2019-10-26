@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default class SingleHero extends React.Component {
 
@@ -7,8 +8,10 @@ export default class SingleHero extends React.Component {
 
         return(
 			<td className="heroCard">
-                <img src={image} alt={name} />
-                <p>{name}</p>
+                <Link to="/heroes/1">
+                    <img src={image} alt={name} />
+                    <p>{name}</p>
+                </Link>
         	</td>   
         )
      }

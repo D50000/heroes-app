@@ -1,18 +1,20 @@
-import { BrowserRouter, Route, Switch, IndexRoute, hashHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Heroes from './Heroes';
-import NotFound from "./NotFound.js";
+import ProfileContainer from './ProfileContainer';
+import HeroProfile from './HeroProfile';
+import NotFound from "./NotFound";
 
 // Stateless Functional Components
-const Router = () => (
-    <BrowserRouter>
+const RouterConfig = () => (
+    <Router>
+        <Route path="/heroes" component={Heroes} />
         <Switch>
-            <Route exact path="/heroes" component={Heroes}>
-                {/* <IndexRoute component={HeroProfile} /> */}
-            </Route>
+            <Route path="/heroes/:heroId" component={HeroProfile} />
+            <Route path="/heroes" component={ProfileContainer} />
             <Route component={NotFound} />
         </Switch>
-    </BrowserRouter>
+    </Router>
 );
 
-export default Router;
+export default RouterConfig;
