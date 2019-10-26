@@ -27,7 +27,6 @@ export default class Heroes extends React.Component {
 	loadProfile = id => {
 		// function generator
 		return () => {
-			const status = {...this.state.status};
 			const url = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
 			fetch(url)
 				.then(function(response){
@@ -35,8 +34,7 @@ export default class Heroes extends React.Component {
 				})
 				.then(data => {
 					// console.log(typeof(data));
-					status[id] = data;
-					this.setState({ status: status});
+					this.setState({ status: data});
 					console.log(data);
 				});
 		}
@@ -46,7 +44,7 @@ export default class Heroes extends React.Component {
        return(
 			<div className="container">
 				{this.state.heroes.map( hero => 
-				<NavLink to={{pathname: `/heroes/${hero.id}`, state: { data: this.state.status, index: hero.id }}} 
+				<NavLink to={{pathname: `/heroes/${hero.id}`, state: { index: hero.id }}} 
 					activeClassName="selected" key={hero.id}>
 					<SingleHero
 						key={hero.id}

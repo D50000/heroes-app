@@ -1,11 +1,35 @@
 import React from 'react';
 
 export default class HeroProfile extends React.Component {
+    state = {};
+
+    componentDidMount() {
+        this.handleLoadProfile();
+    }
+
+    componentDidUpdate(){
+        this.handleLoadProfile();
+    }
     
+    handleLoadProfile = async () => {
+        const id = this.props.location.state.index;
+        const url = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        for (let k of Object.keys(data)) {
+            if (this.state[k] !== data[k]) {
+                this.setState(data);
+                break;
+            }
+        }
+        console.log(data, this.state);
+    }
+
+
     render(){
-        // let id = this.props.location.pathname.split("/")[2].toString();
-        // let id = this.props.location.state.index;
-        // const { str, int, agi, luk } = this.props.location.state.data[3];
+        const { str, int, agi, luk } = this.state;
+
         return(
 			<section>
                 <div className="leftBox">
@@ -13,28 +37,28 @@ export default class HeroProfile extends React.Component {
                     <div>
                         <span>STR</span>
                         <button>+</button>
-                        {/* <span>{str}</span> */}
+                        { str && <span>{str}</span> }
                         <button>-</button>
                     </div>
                     {/* Intelligence */}
                     <div>
                         <span>INT</span>
                         <button>+</button>
-                        {/* <span>{int}</span> */}
+                        { int && <span>{int}</span> }
                         <button>-</button>
                     </div>
                     {/* Agility */}
                     <div>
                         <span>AGI</span>
                         <button>+</button>
-                        {/* <span>{agi}</span> */}
+                        { agi && <span>{agi}</span> }
                         <button>-</button>
                     </div>
                     {/* Luck */}
                     <div>
                         <span>LUK</span>
                         <button>+</button>
-                        {/* <span>{luk}</span> */}
+                        { luk && <span>{luk}</span> }
                         <button>-</button>
                     </div>
                 </div>
