@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
 
 export default class SingleHero extends React.Component {
 
@@ -7,12 +6,10 @@ export default class SingleHero extends React.Component {
         const { id, image, name } = this.props;
 
         return(
-                
-			<div className="heroCard">
-                    <img src={image} alt={name} />
-                    <p>{name}</p>
+			<div className="heroCard" onClick={this.props.loadProfile(id)}>
+                <img src={image} alt={name} />
+                <p>{name}</p>
         	</div>   
-
         )
      }
 }

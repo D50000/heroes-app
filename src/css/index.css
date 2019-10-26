@@ -17,6 +17,8 @@ code {
 
 /* Heroes.js start */
 .container {
+	border: 2px solid #79787d;
+    border-radius: 5px;
 	width: 80%;
 	margin: 5px auto;
 	display: grid;
@@ -54,6 +56,6 @@ section .rightBox {
 }
 
 .selected {
-	background-color: blue;
+	background-color: rgb(71, 151, 88);
 }
 /* HeroProfile.js end */
