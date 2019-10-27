@@ -39,20 +39,6 @@ export default class Heroes extends React.Component {
 				});
 		}
 	}
-
-	test = async () => {
-		const newData = {"str":30,"int":0,"agi":0,"luk":0};
-		const patchUrl = "https://hahow-recruit.herokuapp.com/heroes/3/profile";
-		const res = await fetch(patchUrl, {
-			method: "PATCH",
-			headers: {
-				// "Accept": "application/json",
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(newData)
-		});
-		console.log(res.status, res.statusText);
-	}
 	
     render(){
        return(

@@ -61,6 +61,22 @@ export default class HeroProfile extends React.Component {
             this.setState({skill, left});
         }
     }
+    
+	updateSkillPoints = async (patchData) => {
+		// return () => {
+            const id = this.state.heroId;
+			const patchUrl = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
+			const res = await fetch(patchUrl, {
+				method: "PATCH",
+				headers: {
+					// "Accept": "application/json",
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(patchData)
+			});
+			console.log(res.status, res.statusText);
+		// }
+	}
 
     render(){
         const { str, int, agi, luk } = this.state.skill;
@@ -102,7 +118,7 @@ export default class HeroProfile extends React.Component {
                             { this.state.left && <span>{this.state.left}</span>}
                         </p>
                     </div>
-                    <button>儲存！</button>  
+                    <button onClick={() => {this.updateSkillPoints(this.state.skill)}}>儲存！</button>  
                 </div>
             </section>
         )
