@@ -4,19 +4,25 @@ export default class HeroProfile extends React.Component {
     // {str, int, agi, luk}
     state = {
         skill: {},
-        left: 0
+        left: 0,
+        heroId: undefined
     };
 
-    // Loading datas
+    // Loading datas for access directly.
     componentDidMount() {
         console.log("mount")
         this.handleLoadProfile();
     }
 
-    // componentDidUpdate(){
-    //     console.log("update")
-    //     this.handleLoadProfile();
-    // }
+    componentDidUpdate(){
+        console.log("update")
+        const id = this.props.location.state.index;
+        const nowId = this.state.heroId;
+        if(id !== nowId){
+            this.handleLoadProfile();
+            console.log(`Hero Id change: ${id} !== ${nowId}`)
+        }
+    }
     
     handleLoadProfile = async () => {
         const id = this.props.location.state.index;
@@ -26,7 +32,7 @@ export default class HeroProfile extends React.Component {
 
         for (let k of Object.keys(data)) {
             if (this.state.skill[k] !== data[k]) {
-                this.setState({skill: data, left: 0});
+                this.setState({skill: data, left: 0, heroId: id});
                 break;
             }
         }

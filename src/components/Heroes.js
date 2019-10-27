@@ -40,8 +40,11 @@ export default class Heroes extends React.Component {
 		}
 	}
 
-	test = () => {
-		console.log("test");
+	test = (heroId) => {
+		return () => {
+			
+			console.log("test");
+		}
 	}
 	
     render(){
