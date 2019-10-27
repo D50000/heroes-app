@@ -94,32 +94,32 @@ export default class HeroProfile extends React.Component {
 			<section>
                 <div className="leftBox">
                     {/* Strength */}
-                    <div>
+                    <div className="strSkill">
                         <span>STR</span>
                         <button onClick={this.changeSkill("str", "+")}>+</button>
                         { str && <span>{str}</span> }
-                        <button onClick={this.changeSkill("str", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("str", "-")}>-</button>
                     </div>
                     {/* Intelligence */}
-                    <div>
+                    <div className="intSkill">
                         <span>INT</span>
                         <button onClick={this.changeSkill("int", "+")}>+</button>
                         { int && <span>{int}</span> }
-                        <button onClick={this.changeSkill("int", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("int", "-")}>-</button>
                     </div>
                     {/* Agility */}
-                    <div>
+                    <div className="agiSkill">
                         <span>AGI</span>
                         <button onClick={this.changeSkill("agi", "+")}>+</button>
                         { agi && <span>{agi}</span> }
-                        <button onClick={this.changeSkill("agi", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("agi", "-")}>-</button>
                     </div>
                     {/* Luck */}
-                    <div>
+                    <div className="lukSkill">
                         <span>LUK</span>
                         <button onClick={this.changeSkill("luk", "+")}>+</button>
                         { luk && <span>{luk}</span> }
-                        <button onClick={this.changeSkill("luk", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("luk", "-")}>-</button>
                     </div>
                 </div>
                 <div className="middleBox">

@@ -13,14 +13,30 @@ code {
 }
 
 
+button {
+	background-color: #9e9e9e80;
+    border: 2px solid #615d71;
+    border-radius: 5px;
+	cursor: pointer;
+	font-size: large;
+	font-family: fantasy;
+	font-weight: bold;
+}
 
+button:hover {
+	background-color: rgba(167, 253, 167, 0.603);
+}
 
+.decBtn:hover {
+	background-color: rgba(248, 68, 68, 0.637);
+}
 /* Heroes.js start */
 .container {
 	border: 2px solid #79787d;
     border-radius: 5px;
 	width: 80%;
 	margin: 5px auto;
+	padding: 7px 10px 10px 10px;
 	display: grid;
 	grid-gap: 10px;
 	text-align: center;
@@ -31,8 +47,16 @@ code {
 
 /* SingleHero.js start */
 .heroCard {
-	border: 2px solid #79787d;
-    border-radius: 5px;
+	font-size: large;
+	font-family: fantasy;
+	font-weight: bold;
+	border: 2px solid #c7d44a;;
+	border-radius: 5px;
+	margin: 5px 0px 3px 0px;
+}
+
+.heroCard:hover {
+	background-color: antiquewhite;
 }
 /* SingleHero.js end */
 
@@ -40,9 +64,12 @@ code {
 section {
 	display: flex;
     width: 80%;
-	margin: 0 auto;
+	margin: 15px auto;
+    padding: 10px;
 	border: 2px solid #79787d;
-    border-radius: 5px;
+	border-radius: 5px;
+	font-family: fantasy;
+	font-weight: bold;
 }
 
 section .leftBox {
@@ -50,11 +77,19 @@ section .leftBox {
 	text-align: center;
 }
 
+.leftBox > div {
+	display: grid;
+	height: 45px;
+    grid-gap: 10px;
+    align-items: center;
+    grid-template-columns: 15% 10% 10% 10%;
+}
+
 section .middleBox {
 	color: red;
-	margin-top: 5px;
-	width: 15%;
+	align-self: center;
     text-align: center;
+	width: 15%;
 }
 
 section .rightBox {
@@ -63,7 +98,23 @@ section .rightBox {
 }
 
 .selected {
-	background-color: rgb(71, 151, 88);
+	background-color: #e8ff0566;;
+}
+
+.strSkill {
+	color: brown;
+}
+
+.intSkill {
+	color: blue;
+}
+
+.agiSkill {
+	color: green
+}
+
+.lukSkill {
+	color: palevioletred;
 }
 /* HeroProfile.js end */
 
