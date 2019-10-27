@@ -46,12 +46,19 @@ section {
 }
 
 section .leftBox {
-	width: 60%;
+	width: 50%;
 	text-align: center;
 }
 
+section .middleBox {
+	color: red;
+	margin-top: 5px;
+	width: 15%;
+    text-align: center;
+}
+
 section .rightBox {
-	width: 40%;
+	width: 35%;
 	text-align: center;
 }
 
@@ -59,3 +66,28 @@ section .rightBox {
 	background-color: rgb(71, 151, 88);
 }
 /* HeroProfile.js end */
+
+/* Animation profile start */
+.profileAnimate-enter {
+	transform: translateX(-120%);
+	transition: 0.5s;
+	max-height: 0;
+	padding: 0 !important;
+}
+
+.profileAnimate-enter-active {
+	max-height: 60px;
+    transform: translateX(0);
+    padding: 2rem 0 !important;
+}
+
+.profileAnimate-exit {
+	transition: 0.5s;
+	transform: translateX(0);
+
+}
+.profileAnimate-exit-active {
+	transform: translateX(120%);
+	padding: 0;
+}
+/* Animation profile end */
