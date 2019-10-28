@@ -1,11 +1,13 @@
 import React from 'react';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default class HeroProfile extends React.Component {
     // {str, int, agi, luk}
     state = {
         skill: {},
         left: 0,
-        heroId: undefined
+        heroId: undefined,
+        text: ""
     };
 
     // Loading datas for access directly.
@@ -32,7 +34,7 @@ export default class HeroProfile extends React.Component {
 
         for (let k of Object.keys(data)) {
             if (this.state.skill[k] !== data[k]) {
-                this.setState({skill: data, left: 0, heroId: id});
+                this.setState({skill: data, left: 0, heroId: id, text: ""});
                 break;
             }
         }
@@ -44,13 +46,13 @@ export default class HeroProfile extends React.Component {
             let skill = this.state.skill;
             let left = this.state.left
             if(method === "+" && left === 0){
-                alert("無點數了");
+                this.setState({text: "無點數了"});
                 return false;
             }else if(method === "+"){
                 skill[skillName] += 1;
                 left -= 1;
             }else if(method === "-" && skill[skillName] === 0){
-                alert("不能低於0");
+                this.setState({text: "不能低於0"});
                 return false;
             }else{
                 skill[skillName] -= 1;
@@ -64,6 +66,10 @@ export default class HeroProfile extends React.Component {
     
 	updateSkillPoints = async (patchData) => {
 		// return () => {
+            if(this.state.left !== 0){
+                this.setState({text: "技能點尚未點完！"});
+                return false;
+            }
             const id = this.state.heroId;
 			const patchUrl = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
 			const res = await fetch(patchUrl, {
@@ -74,43 +80,50 @@ export default class HeroProfile extends React.Component {
 				},
 				body: JSON.stringify(patchData)
 			});
-			console.log(res.status, res.statusText);
+            console.log(res.status, res.statusText);
+            this.setState({text: "技能點更新成功！"});
 		// }
 	}
 
     render(){
         const { str, int, agi, luk } = this.state.skill;
         return(
+
+            <TransitionGroup component="div" className="profileAnimate">
+            <CSSTransition classNames="profileAnimate" key={this.state.heroId} timeout={{enter:250, exit:250}}>
 			<section>
                 <div className="leftBox">
                     {/* Strength */}
-                    <div>
+                    <div className="strSkill">
                         <span>STR</span>
                         <button onClick={this.changeSkill("str", "+")}>+</button>
                         { str && <span>{str}</span> }
-                        <button onClick={this.changeSkill("str", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("str", "-")}>-</button>
                     </div>
                     {/* Intelligence */}
-                    <div>
+                    <div className="intSkill">
                         <span>INT</span>
                         <button onClick={this.changeSkill("int", "+")}>+</button>
                         { int && <span>{int}</span> }
-                        <button onClick={this.changeSkill("int", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("int", "-")}>-</button>
                     </div>
                     {/* Agility */}
-                    <div>
+                    <div className="agiSkill">
                         <span>AGI</span>
                         <button onClick={this.changeSkill("agi", "+")}>+</button>
                         { agi && <span>{agi}</span> }
-                        <button onClick={this.changeSkill("agi", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("agi", "-")}>-</button>
                     </div>
                     {/* Luck */}
-                    <div>
+                    <div className="lukSkill">
                         <span>LUK</span>
                         <button onClick={this.changeSkill("luk", "+")}>+</button>
                         { luk && <span>{luk}</span> }
-                        <button onClick={this.changeSkill("luk", "-")}>-</button>
+                        <button className="decBtn" onClick={this.changeSkill("luk", "-")}>-</button>
                     </div>
+                </div>
+                <div className="middleBox">
+                    { luk && <span>{this.state.text}</span> }
                 </div>
                 <div className="rightBox">
                     <div>
@@ -118,9 +131,11 @@ export default class HeroProfile extends React.Component {
                             { this.state.left && <span>{this.state.left}</span>}
                         </p>
                     </div>
-                    <button onClick={() => {this.updateSkillPoints(this.state.skill)}}>儲存！</button>  
+                    <button onClick={() => {this.updateSkillPoints(this.state.skill)}}>儲存</button>  
                 </div>
             </section>
+            </CSSTransition>
+            </TransitionGroup>
         )
      }
 }
