@@ -4,9 +4,10 @@ export default class ProfileContainer extends React.Component {
 
     render(){
         return(
-            <span>
-                {console.log(`~~ initial ~~`)}
-            </span> 
+            <div className="heroCard batman">
+                <img src="/batman.png" alt="batman" />
+                <p>Batman: Select a hero above. ⬆️⬆️⬆️</p>
+        	</div>
         )
      }
 }

@@ -58,6 +58,12 @@ button:hover {
 .heroCard:hover {
 	background-color: antiquewhite;
 }
+
+.batman {
+	width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
 /* SingleHero.js end */
 
 /* HeroProfile.js start */
