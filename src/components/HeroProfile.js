@@ -131,7 +131,7 @@ export default class HeroProfile extends React.Component {
                             { this.state.left && <span>{this.state.left}</span>}
                         </p>
                     </div>
-                    <button onClick={() => {this.updateSkillPoints(this.state.skill)}}>儲存！</button>  
+                    <button onClick={() => {this.updateSkillPoints(this.state.skill)}}>儲存</button>  
                 </div>
             </section>
             </CSSTransition>
