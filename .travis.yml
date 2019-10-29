@@ -11,7 +11,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $heroes-app
+  github_token: ${heroes-app}
   local_dir: build
   on:
     branch: master
