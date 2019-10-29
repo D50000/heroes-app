@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - "10"
 cache:
   directories:
     - node_modules
@@ -11,7 +11,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: ${heroes-app}
+  github_token: $heroes_app
   local_dir: build
   on:
     branch: master
