@@ -1,7 +1,8 @@
 {
   "name": "heroes-app",
-  "version": "0.1.0",
+  "version": "v1.0.0",
   "private": true,
+  "homepage": "https://github.com/D50000/heroes-app/",
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
