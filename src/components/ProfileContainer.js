@@ -6,7 +6,7 @@ export default class ProfileContainer extends React.Component {
         return(
             <div className="heroCard batman">
                 <img src="/batman.png" alt="batman" />
-                <p>Batman: Select a hero above. ⬆️⬆️⬆️</p>
+                <p>Batman: Select a hero above.<span> ⬆️⬆️⬆️</span></p>
         	</div>
         )
      }
