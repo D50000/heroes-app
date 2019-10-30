@@ -60,9 +60,21 @@ button:hover {
 }
 
 .batman {
+	cursor: pointer;
 	width: 230px;
     margin: 0 auto;
     text-align: center;
+}
+
+.joker {
+	width: 230px;
+    margin: 0 auto;
+	text-align: center;
+	cursor: pointer;
+}
+
+.joker img {
+	width: 225px;
 }
 /* SingleHero.js end */
 

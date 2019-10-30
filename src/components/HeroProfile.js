@@ -91,7 +91,7 @@ export default class HeroProfile extends React.Component {
 
             <TransitionGroup component="div" className="profileAnimate">
             <CSSTransition classNames="profileAnimate" key={this.state.heroId} timeout={{enter:250, exit:250}}>
-			<section>
+			<section className="shadow p-3 mb-5 bg-white rounded">
                 <div className="leftBox">
                     {/* Strength */}
                     <div className="strSkill">

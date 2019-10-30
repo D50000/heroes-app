@@ -21,6 +21,20 @@ export default class Heroes extends React.Component {
 				this.setState({ heroes: heroes });
 				console.log(heroes);
 			});
+
+	}
+
+	toggleMode = () => {
+		document.onkeyup = function(e) {
+			// let tmp = this.state.batman;
+			if (e.key === "H") {
+				alert("Batman arrives");
+				// this.setState({ batman: 1 });
+			} else {
+				alert("Batman leaves");
+				// this.setState({ batman: 0 });
+			}
+		};
 	}
 
 	// Load single hero status.
@@ -42,7 +56,7 @@ export default class Heroes extends React.Component {
 	
     render(){
        return(
-			<div className="container">
+			<div className="container shadow p-3 mb-5 bg-white rounded">
 				{this.state.heroes.map( hero => 
 				<NavLink to={{pathname: `/heroes/${hero.id}`, state: { index: hero.id }}} 
 					activeClassName="selected" key={hero.id}>
