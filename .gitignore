@@ -5,3 +5,6 @@ node_modules
 
 // Mac book's meta data file.
 .DS_Store 
+
+// Project build data
+build

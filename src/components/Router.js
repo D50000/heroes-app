@@ -7,7 +7,7 @@ import NotFound from "./NotFound";
 
 // Stateless Functional Components
 const RouterConfig = () => (
-    <Router>
+    <Router basename='/'>
         <Route path="/heroes" component={Heroes} />
         <Switch>
             <Route path="/heroes/:heroId" component={HeroProfile} />
