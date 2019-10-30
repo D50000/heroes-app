@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Heroes from './Heroes';
 import ProfileContainer from './ProfileContainer';
