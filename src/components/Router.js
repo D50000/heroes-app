@@ -1,8 +1,8 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
-import Heroes from './Heroes';
-import ProfileContainer from './ProfileContainer';
-import HeroProfile from './HeroProfile';
+import Heroes from "./Heroes";
+import ProfileContainer from "./ProfileContainer";
+import HeroProfile from "./HeroProfile";
 import NotFound from "./NotFound";
 
 // Stateless Functional Components
