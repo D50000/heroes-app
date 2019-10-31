@@ -122,9 +122,7 @@ export default class HeroProfile extends React.Component {
                         <button className="decBtn" onClick={this.changeSkill("luk", "-")}>-</button>
                     </div>
                 </div>
-                <div className="middleBox">
-                    { luk && <span>{this.state.text}</span> }
-                </div>
+                <span className="middleBox">{this.state.text}</span>
                 <div className="rightBox">
                     <div>
                         <p>剩餘點數：

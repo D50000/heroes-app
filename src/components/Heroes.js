@@ -24,19 +24,6 @@ export default class Heroes extends React.Component {
 
 	}
 
-	toggleMode = () => {
-		document.onkeyup = function(e) {
-			// let tmp = this.state.batman;
-			if (e.key === "H") {
-				alert("Batman arrives");
-				// this.setState({ batman: 1 });
-			} else {
-				alert("Batman leaves");
-				// this.setState({ batman: 0 });
-			}
-		};
-	}
-
 	// Load single hero status.
 	loadProfile = id => {
 		// function generator
