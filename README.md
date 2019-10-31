@@ -2,15 +2,11 @@
 # heroes-app
 Hahow recruit project, develop repository.
 
+
 ## Project resource
 ### Online Production version:  
 The **master branch** of the React build version.  
 https://d50000.github.io/heroes-app/#/heroes  
-
-
-## App Framework
-![](https://github.com/D50000/heroes-app/blob/master/structure.png)
-
 
 ### Develop version:
 1. Download the **develop-demo** branch.
@@ -18,6 +14,10 @@ https://d50000.github.io/heroes-app/#/heroes
 3. `npm install` to install the project.
 4. `npm start` for start the local server.
 5. `ctrl + c` for stop the server.
+
+
+## App Framework
+![](https://github.com/D50000/heroes-app/blob/master/structure.png)
 
 
 ## Library Import
