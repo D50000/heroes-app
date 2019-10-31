@@ -1,3 +1,4 @@
+
 # heroes-app
 Hahow recruit project, develop repository.
 
@@ -5,6 +6,10 @@ Hahow recruit project, develop repository.
 ### Online Production version:  
 The **master branch** of the React build version.  
 https://d50000.github.io/heroes-app/#/heroes  
+
+
+## App Framework
+![](https://github.com/D50000/heroes-app/blob/master/structure.png)
 
 
 ### Develop version:
@@ -41,13 +46,16 @@ https://d50000.github.io/heroes-app/#/heroes
 ## Issues / Obstacle
 - “gh-pages” for online Demo need to use ‘hashrouter’ in the router, local version need to browserrouter. 
 - Jest run the test case. (not yet)
-- jest auto deploy to github server. (done)
+~~- jest auto deploy to github server. (done)~~
 
 
 ## Feature
-### Press secret key “H” for Batman mode.
-
+### Press secret key *B* for Batman mode.
+Press **B** at the path **/heroes** and it will turn to *Batman* mode.  
+You can find *Joker* also.
+![](https://github.com/D50000/heroes-app/blob/master/pressB.png)
 
 
 ### Auto run build to github server by Travis CI.
-![](https://github.com/D50000/heroes-app/blob/master/structure.png)
+When commit to the **master** branch **Travis** will auto build and deploy to the github server.
+![](https://github.com/D50000/heroes-app/blob/master/travis.png)
