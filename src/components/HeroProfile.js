@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default class HeroProfile extends React.Component {
@@ -65,33 +65,31 @@ export default class HeroProfile extends React.Component {
     }
     
 	updateSkillPoints = async (patchData) => {
-		// return () => {
-            if(this.state.left !== 0){
-                this.setState({text: "技能點尚未點完！"});
-                return false;
-            }
-            const id = this.state.heroId;
-			const patchUrl = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
-			const res = await fetch(patchUrl, {
-				method: "PATCH",
-				headers: {
-					// "Accept": "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify(patchData)
-			});
-            console.log(res.status, res.statusText);
-            this.setState({text: "技能點更新成功！"});
-		// }
+        if(this.state.left !== 0){
+            this.setState({text: "技能點尚未點完！"});
+            return false;
+        }
+        const id = this.state.heroId;
+        const patchUrl = `https://hahow-recruit.herokuapp.com/heroes/${id}/profile`;
+        const res = await fetch(patchUrl, {
+	        method: "PATCH",
+		    headers: {
+		    // "Accept": "application/json",
+		    "Content-Type": "application/json"
+	    },
+	    body: JSON.stringify(patchData)
+	    });
+        console.log(res.status, res.statusText);
+        this.setState({text: "技能點更新成功！"});
 	}
 
     render(){
         const { str, int, agi, luk } = this.state.skill;
+        
         return(
-
             <TransitionGroup component="div" className="profileAnimate">
             <CSSTransition classNames="profileAnimate" key={this.state.heroId} timeout={{enter:250, exit:250}}>
-			<section>
+			<section className="shadow p-3 mb-5 bg-white rounded">
                 <div className="leftBox">
                     {/* Strength */}
                     <div className="strSkill">
@@ -122,9 +120,7 @@ export default class HeroProfile extends React.Component {
                         <button className="decBtn" onClick={this.changeSkill("luk", "-")}>-</button>
                     </div>
                 </div>
-                <div className="middleBox">
-                    { luk && <span>{this.state.text}</span> }
-                </div>
+                <span className="middleBox">{this.state.text}</span>
                 <div className="rightBox">
                     <div>
                         <p>剩餘點數：
