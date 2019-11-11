@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/heroes-app/static/css/main.d4f1086b.chunk.css",
+    "main.js": "/heroes-app/static/js/main.02a1abd0.chunk.js",
+    "main.js.map": "/heroes-app/static/js/main.02a1abd0.chunk.js.map",
+    "runtime-main.js": "/heroes-app/static/js/runtime-main.4e3e0927.js",
+    "runtime-main.js.map": "/heroes-app/static/js/runtime-main.4e3e0927.js.map",
+    "static/css/2.510409cd.chunk.css": "/heroes-app/static/css/2.510409cd.chunk.css",
+    "static/js/2.2ffb46b9.chunk.js": "/heroes-app/static/js/2.2ffb46b9.chunk.js",
+    "static/js/2.2ffb46b9.chunk.js.map": "/heroes-app/static/js/2.2ffb46b9.chunk.js.map",
+    "index.html": "/heroes-app/index.html",
+    "precache-manifest.8038b8f72fb2e81a836d033d6c9c5543.js": "/heroes-app/precache-manifest.8038b8f72fb2e81a836d033d6c9c5543.js",
+    "service-worker.js": "/heroes-app/service-worker.js",
+    "static/css/2.510409cd.chunk.css.map": "/heroes-app/static/css/2.510409cd.chunk.css.map",
+    "static/css/main.d4f1086b.chunk.css.map": "/heroes-app/static/css/main.d4f1086b.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e3e0927.js",
+    "static/css/2.510409cd.chunk.css",
+    "static/js/2.2ffb46b9.chunk.js",
+    "static/css/main.d4f1086b.chunk.css",
+    "static/js/main.02a1abd0.chunk.js"
+  ]
+}
