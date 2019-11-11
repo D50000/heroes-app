@@ -44,6 +44,7 @@ https://d50000.github.io/heroes-app/#/heroes
 
 
 ## Issues / Obstacle
+- Can't run when route directly to the /heroes/2
 - “gh-pages” for online Demo need to use ‘hashrouter’ in the router, local version need to browserrouter. 
 - Jest run the test case. (not yet)
 ~~- jest auto deploy to github server. (done)~~
